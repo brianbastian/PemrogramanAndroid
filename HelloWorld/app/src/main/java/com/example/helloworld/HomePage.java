@@ -49,8 +49,8 @@ public class HomePage extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
-        TextView textView = (TextView) findViewById(R.id.text);
-        textView.setText("Notifikasi akan muncul jika wifi di nyalakan atau di matikan");
+//        TextView textView = (TextView) findViewById(R.id.text);
+//        textView.setText("Notifikasi akan muncul jika wifi di nyalakan atau di matikan");
     }
 
     @Override
