@@ -10,7 +10,10 @@ import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +23,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomePage extends AppCompatActivity {
-
+    private Button btnLogout;
+    private Preferences sharedPrefManager;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
@@ -51,8 +55,20 @@ public class HomePage extends AppCompatActivity {
         });
 //        TextView textView = (TextView) findViewById(R.id.text);
 //        textView.setText("Notifikasi akan muncul jika wifi di nyalakan atau di matikan");
+        sharedPrefManager = new Preferences(this);
+        btnLogout = findViewById(R.id.btnlogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onClickBtnLogout();
+            }
+        });
     }
-
+    private void onClickBtnLogout() {
+        sharedPrefManager.saveSPBoolean(Preferences.SP_SUDAH_LOGIN, false);
+        startActivity(new Intent(HomePage.this, LoginPage.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+        finish();
+    }
     @Override
     protected void onStart() {
         super.onStart();
