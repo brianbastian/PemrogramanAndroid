@@ -27,6 +27,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tab Dua" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Fragment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab Tiga" />
+        <com.google.android.material.tabs.TabItem
+        android:id="@+id/Fragment4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab Empat" />
 
 
     </com.google.android.material.tabs.TabLayout>

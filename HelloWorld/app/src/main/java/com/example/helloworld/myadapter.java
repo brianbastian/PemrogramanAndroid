@@ -19,6 +19,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder>{
         this.dataholder = dataholder;
     }
 
+
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

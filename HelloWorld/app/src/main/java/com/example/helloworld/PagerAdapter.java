@@ -21,6 +21,8 @@ public class PagerAdapter extends FragmentPagerAdapter{
                 return new FirstFragment();
             case 1:
                 return new SecondFragment();
+            case 2:
+                return new InputData();
             default:
                 return null;
         }
